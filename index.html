@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Portfolio | Only One's</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="Official JaKen Logo.png">
+    <style>
+        :root {
+            --primary-color: #6c63ff;
+            --secondary-color: #4a41da;
+            --dark-color: #2c2c2c;
+            --light-color: #f8f9fa;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark-color);
+        }
+        
+        .section-padding {
+            padding: 100px 0;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://source.unsplash.com/random/1920x1080/?coding') no-repeat center center;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+        
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+        
+        .btn-outline-light:hover {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .about-img {
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .skill-item {
+            margin-bottom: 20px;
+        }
+        
+        .skill-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .progress {
+            height: 10px;
+            border-radius: 5px;
+        }
+        
+        .portfolio-item {
+            margin-bottom: 30px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+        }
+        
+        .portfolio-img {
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .service-card {
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-card {
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+        
+        .testimonial-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 30px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">My One's Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Homepage</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About Me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#portfolio">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#starter-testimonials">Testimonials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact Me</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center hero-content">
+                    <h1 class="display-4 fw-bold">Hello, I'm <span class="text-primary">Ken</span></h1>
+                    <p class="lead">Front-End Developer & Web Designer</p>
+                    <p>I create beautiful, responsive websites that fueled by passion, and creativity.</p>
+                    <div class="mt-4">
+                        <a href="#portfolio" class="btn btn-primary btn-lg me-3">View My Work:</a>
+                        <a href="#contact" class="btn btn-outline-light btn-lg">Contact Me:</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5 mb-4 mb-lg-0">
+                    <img src="Ken.jpg" alt="About Me" class="img-fluid about-img">
+                </div>
+                <div class="col-lg-7">
+                    <h2 class="mb-4">About Me:</h2>
+                    <p class="lead">Hello, I'm Ken Humphrey V. Vista, a passionate 2nd-Year College Student na nagpatak sa mundo ng "Web Development". I enjoy creating responsive and clean websites using HTML, CSS, JavaScript, at TailWind. Coding is not just skill for me. It's my way of expressing creativity at paggawa ng mga bagay na may "Purpose".</p>
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <div class="skill-item">
+                                <div class="skill-name">HTML/CSS</div>
+                                <div class="progress">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">JavaScript</div>
+                                <div class="progress">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">Bootstrap</div>
+                                <div class="progress">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 90%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="skill-item">
+                                <div class="skill-name">UI/UX Design</div>
+                                <div class="progress">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <a href="Ken_Vista_CV.pdf" class="btn btn-primary">Download CV</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section-padding">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="mb-3">My Portfolio:</h2>
+                    <p class="lead">Check out some of my recent projects</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="portfolio-item">
+                        <img src="1st Portfolio.png" alt="Project 1" class="img-fluid portfolio-img">
+                        <div class="p-4">
+                            <h5>My 1st Portfolio</h5>
+                            <p>A fully responsive e-commerce website built with Bootstrap and JavaScript.</p>
+                            <a href="https://kenthecoder-dev.github.io/1st-Portfolio/" target="_blank" class="btn btn-sm btn-outline-primary">View Project:</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="portfolio-item">
+                        <img src="2nd Portfolio.png" alt="Project 2" class="img-fluid portfolio-img">
+                        <div class="p-4">
+                            <h5>My 2nd Portfolio</h5>
+                            <p>A clean and modern portfolio website for a photographer.</p>
+                            <a href="https://kenthecoder-dev.github.io/2nd-Portfolio/" target="_blank" class="btn btn-sm btn-outline-primary">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="portfolio-item">
+                        <img src="3rd Portfolio.png" alt="Project 3" class="img-fluid portfolio-img">
+                        <div class="p-4">
+                            <h5>My 3rd Portfolio</h5>
+                            <p>A beautiful website for a restaurant with online ordering system.</p>
+                            <a href="https://kenthecoder-dev.github.io/Complete-Portfolio/" target="_blank" class="btn btn-sm btn-outline-primary">View Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section-padding bg-light">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="mb-3">My Services:</h2>
+                    <p class="lead">What I can do for you</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="service-card text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h4>Web Development</h4>
+                        <p>I create responsive websites that work on all devices using the latest technologies.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="service-card text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <h4>Web Design</h4>
+                        <p>I design beautiful and user-friendly interfaces that enhance user experience.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="service-card text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h4>Responsive Design</h4>
+                        <p>I ensure your website looks great on all devices, from mobile to desktop.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials/Blog Section -->
+    <section id="testimonials" class="section-padding">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="mb-3">Blog:</h2>
+                    <p class="lead">Latest articles and insights</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="Blog 1.jpg" class="card-img-top" alt="Blog Post 1">
+                        <div class="card-body">
+                            <h5 class="card-title">China 'likely' sent drones to map out Philippines' underwater terrain Navy</h5>
+                            <p class="card-text">MANILA, Philippines — Two underwater drones that Filipino fishermen discovered within Philippine waters last year were likely deployed by the Chinese government for military purposes, a Philippine Navy spokesperson said on Tuesday, April 15.</p>
+                            <a href="https://www.philstar.com/headlines/2025/04/15/2436253/china-likely-sent-drones-map-out-philippines-underwater-terrain-navy" class="btn btn-sm btn-outline-primary">Read More</a>
+                        </div>
+                        <div class="card-footer text-muted">
+                            <small>Posted on April 15, 2025</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="Blog 2.jpg" class="card-img-top" alt="Blog Post 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Palace rebuts 'darkness' narrative, points to Duterte admin as source</h5>
+                            <p class="card-text">MANILA, Philippines — Malacañang on Tuesday thumbed down claims that the country is in a state of darkness or decline, countering that the Philippines is, in fact, on a path to improvement.</p>
+                            <a href="https://www.philstar.com/headlines/2025/04/15/2436252/palace-rebuts-darkness-narrative-points-duterte-admin-source" class="btn btn-sm btn-outline-primary">Read More</a>
+                        </div>
+                        <div class="card-footer text-muted">
+                            <small>Posted on April 15, 2025</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="Blog 3.jpg" class="card-img-top" alt="Blog Post 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Fish vendors told: Keep prices reasonable this Holy Week</h5>
+                            <p class="card-text">MANILA, Philippines — As Catholics abstain from meat this Holy Week, the Department of Agriculture (DA) has urged fish vendors not to take advantage of consumers in the coming days..</p>
+                            <a href="https://www.philstar.com/business/agriculture/2025/04/15/2436259/fish-vendors-told-keep-prices-reasonable-holy-week" class="btn btn-sm btn-outline-primary">Read More</a>
+                        </div>
+                        <div class="card-footer text-muted">
+                            <small>Posted on April 15, 2025</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="https://www.philstar.com/" class="btn btn-primary">View All Posts</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Testimonials Section -->
+    <section id="starter-testimonials" class="section-padding bg-light">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="mb-3">Testimonials:</h2>
+                    <p class="lead">What my they say about me</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="testimonial-card text-center">
+                        <img src="Daiserie.jpg" alt="Client 1" class="testimonial-img">
+                        <h5>Daiserie V. Vista</h5>
+                        <p class="text-muted">My Mother</p>
+                        <p>"Bilang isang magulang, sobrang proud kami sa anak naming si Ken. Kahit walang pambili ng laptop noon, nagsumikap parin siya para matuto. Nakikita namin kung gaano siya kasipag at determinadong umangat sa buhay gamit ang kanyang dedikasyon sa pag-aaral."</p>
+                        <div class="mt-3">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card text-center">
+                        <img src="Alimar.jpg" alt="Client 2" class="testimonial-img">
+                        <h5>Alimar Lindongan</h5>
+                        <p class="text-muted">My Friend</p>
+                        <p>"Classmate ko si Ken noong Grade 11 & 12, and masasabi kong isa siya sa pinaka-dedicated at passionate na nakilala ko. Mahilig talaga sa Tech at creative design, and ngayon nakikita ko kung gaano siya ka-determined mag improve araw-araw. Proud ako sa kanya bilang isang kaibigan."</p>
+                        <div class="mt-3">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding bg-light">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="mb-3">Contact Me:</h2>
+                    <p class="lead">Get in touch with me</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="contact-info">
+                        <h4 class="mb-4">Contact Information:</h4>
+                        <div class="contact-info-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h5>Address:</h5>
+                                <p>379, Nancalobasaan</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h5>Email:</h5>
+                                <p>kenvista594@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h5>Phone:</h5>
+                                <p>63+ 929-163-2505</p>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <h5>Follow Me:</h5>
+                            <div class="d-flex">
+                                <a href="https://www.facebook.com/vistaken/" class="social-icon">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="https://github.com/KenTheCoder-dev" class="social-icon">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="contact-form">
+                        <h4 class="mb-4">Send Me a Message here:</h4>
+                        <form>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Your Name" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" class="form-control" placeholder="Your Email" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Subject" required>
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <strong><p>&copy; 2025 My Portfolio. All Rights Reserved.</p></strong>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <h5 class="text-3xl font-bold mb-6">Privacy Policy:</a></h5>
+                        <p class="mb-4">We respect your privacy. This Privacy Policy explain how we collect, use, and protect your personal information when you visit my website.</p>
+                    <h5 class="text-3xl font-bold mb-6">Terms of Service:</a></h5>
+                        <p class="mb-4">By using this website, you agree to our Terms of Service. Please review our terms and conditions carefully before using our website.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 
